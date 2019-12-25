@@ -1,0 +1,20 @@
+# User-specific files
+bin
+obj
+appsettings.json
+
+# Visual Studio 2015/2017 cache/options directory
+.vscode
+# .NET Core
+project.lock.json
+
+
+# SQL Server files
+*.db
+*.lock
+
+# BeatPulse healthcheck temp database
+healthchecksdb
+
+# Backup folder for Package Reference Convert tool in Visual Studio 2017
+MigrationBackup/
