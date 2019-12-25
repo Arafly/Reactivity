@@ -29,9 +29,11 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             // Dependency injection so the DB is available to other part of the application
-            services.AddDbContext<DataContext>(opt => {
-                opt.UseSqlServer("Server=(LocalDb)\\MSSQLLocalDB;Database=Reactivity;Trusted_Connection=True");
-            });
+            services.AddDbContext<DataContext>(opt =>
+            opt.UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection"))
+            );
+
             services.AddControllers();
         }
 
