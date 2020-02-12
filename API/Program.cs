@@ -18,6 +18,7 @@ namespace API
         {
             // Returns what's stored in the WebHostBuilder method
             var host = CreateHostBuilder(args).Build();
+            
             // House-tidying task
             using (var scope = host.Services.CreateScope())
             {
@@ -26,6 +27,7 @@ namespace API
                 {
                     var context = services.GetRequiredService<DataContext>();
                     context.Database.Migrate();
+                    Seed.SeedData(context);
                 }
                 catch (Exception ex)
                 {
